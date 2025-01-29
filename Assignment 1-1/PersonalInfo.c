@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int main()
-{
+int main() {
     // Unit Test 1
     printf("Lucinda Potter\n");
     printf("6/24/1992\n");
