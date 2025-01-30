@@ -1,0 +1,44 @@
+SET danielle_sales = 0
+SET edward_sales = 0
+SET francis_sales = 0
+SET grand_total = 0
+
+LOOP WHILE true DO
+    PRINT "Enter salesperson: "
+    INPUT salesperson
+
+    IF salesperson is "Z" DO
+        BREAK
+    END
+
+    IF salesperson is NOT "D" AND salesperson is NOT "E" and salesperson is NOT "F" DO
+        PRINT "Error, invalid salesperson selected, please try again"
+        CONTINUE
+    END
+
+    PRINT "Enter sale: "
+    INPUT sale
+
+    IF salesperson is "D" DO
+        add sale to danielle_sales
+    END ELSE IF salesperson is "E" DO
+        add sale to edward_sales
+    END ELSE IF salesperson is "F" DO
+        add sale to francis_sales
+    END
+
+    add sale to grand_total
+END
+
+PRINT danielle_sales
+PRINT edward_sales
+PRINT francis_sales
+PRINT grand_total
+
+IF danielle_sales is the highest DO 
+    PRINT "Highest Sale: Danielle"
+END ELSE IF edward_sales is the highest DO
+    PRINT "Highest Sale: Edward"
+END ELSE IF francis_sales is the highest DO
+    PRINT "Highest Sale: Francis"
+END
