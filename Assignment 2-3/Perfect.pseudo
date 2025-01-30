@@ -1,0 +1,18 @@
+INPUT num
+IF num is NOT a number OR <= 0 DO
+    PRINT "Invalid input"
+    EXIT
+END
+
+total = 0
+FOR all numbers between 1 AND num DO
+    IF num is divisible by the current number DO
+        add the current number to the total
+    END
+END
+
+IF num == total DO
+    PRINT "Perfect Number"
+END ELSE DO
+    PRINT "Not a Perfect Number"
+END
