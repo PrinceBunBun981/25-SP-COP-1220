@@ -1,0 +1,38 @@
+PROCEDURE get_category(float) DO
+    IF (windSpeed >= 157) DO
+        RETURN 5;
+    END ELSE IF (windSpeed >= 130) DO
+        RETURN 4;
+    END ELSE IF (windSpeed >= 111) DO
+        RETURN 3;
+    END ELSE IF (windSpeed >= 96) DO
+        RETURN 2;
+    END ELSE IF (windSpeed >= 74) DO
+        RETURN 1;
+    END ELSE DO
+        RETURN 0;
+    END
+END
+
+INPUT windSpeed
+
+SWITCH get_category(windSpeed) DO
+    CASE 5 DO
+        PRINT "Category Five Hurricane"
+    END 
+    CASE 4 DO
+        PRINT "Category Four Hurricane"
+    END
+    CASE 3 DO
+        PRINT "Category Three Hurricane"
+    END
+    CASE 2 DO
+        PRINT "Category Two Hurricane"
+    END
+    CASE 1 DO
+        PRINT "Category One Hurricane"
+    END
+    CASE DEFAULT DO
+        PRINT "Not a Hurricane"
+    END
+END
