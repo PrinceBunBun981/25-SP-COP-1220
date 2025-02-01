@@ -1,0 +1,21 @@
+PROCEDURE is_perfect(num) DO
+    total = 0
+    FOR all numbers between 1 AND num DO
+        IF num is divisible by the current number DO
+            add the current number to the total
+        END
+    END
+    RETURN num == total
+END
+
+INPUT num
+IF num is NOT a number OR <= 0 DO
+    PRINT "Invalid input"
+    EXIT
+END
+
+IF is_perfect(num) DO
+    PRINT "Perfect Number"
+END ELSE DO
+    PRINT "Not a Perfect Number"
+END
