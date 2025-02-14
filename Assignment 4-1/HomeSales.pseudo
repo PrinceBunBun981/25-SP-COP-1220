@@ -1,0 +1,40 @@
+SET SALES_PEOPLE 3
+SET grand_total = 0
+SET sales = {0, 0, 0}
+SET initials = {'D', 'E', 'F'}
+SET names = {"Danielle", "Edward", "Francis"}
+
+LOOP WHILE true DO
+    PRINT "Enter salesperson: "
+    INPUT salesperson
+
+    IF salesperson is "Z" DO
+        BREAK
+    END
+
+    SET found = 0
+    LOOP FOR SALES_PEOPLE DO
+        IF salesperson is the initials at the index DO
+            found = 1
+            INPUT sale
+            add the sale to the sales at the index of the initials AND to grand_total
+        END
+    END
+
+    IF a salesperson is not found DO
+        PRINT "Error, invalid salesperson selected, please try again"
+        CONTINUE
+    END
+END
+
+SET highest_salesperson_index = 0
+LOOP FOR SALES_PEOPLE DO
+    PRINT the salesperson at the index's total sales
+
+    IF the sales at the index is greater than the sales at the highest_salesperson_index DO
+    highest_salesperson_index = the index
+    END
+END
+
+PRINT grand_total
+PRINT the salesperson at the highest_salesperson_index
