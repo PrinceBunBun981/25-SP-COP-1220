@@ -1,0 +1,34 @@
+SET temperatures = []
+
+LOOP until 5 valid temperatures are entered DO
+    INPUT temperature
+
+    IF temperature < -30 OR temperature > 130 DO
+        PRINT "Temperature %d is invalid, please enter a valid temperature between -30 and 130."
+        CONTINUE
+    END
+
+    add temperature to temperatures array
+END
+
+SET first_temp = temperatures[0]
+SET is_decreasing = 1
+SET is_increasing = 1
+FOR all 5 temperatures DO
+    IF temperatures[index] < first_temp DO
+        is_increasing = 0
+    END ELSE IF temperatures[index] > first_temp DO
+        is_decreasing = 0
+    END
+END
+
+IF is_decreasing DO
+    PRINT "Getting colder"
+END ELSE IF is_increasing DO
+    PRINT "Getting warmer"
+END ELSE DO
+    PRINT "It's a mixed bag"
+END
+
+PRINT "5-day Temperature [%d, %d, %d, %d, %d]"
+PRINT "Average Temperature is %0.1f degrees"
